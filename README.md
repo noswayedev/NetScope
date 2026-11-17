@@ -1,5 +1,17 @@
 # NetScope 4.0 — Network Discovery, Diagnostics & Monitoring
 
+<!-- README language navigation -->
+## 🌍 Documentation languages / Langues de documentation
+
+**Available languages:** 🇬🇧 English · 🇫🇷 Français · 🇩🇪 Deutsch · 🇪🇸 Español · 🇮🇹 Italiano · 🇯🇵 日本語 · 🇰🇷 한국어 · 🇵🇹 Português · 🇷🇺 Русский · 🇨🇳 简体中文
+
+The full technical documentation is in English below. Translated quick-start guides are available at the bottom of this page. NetScope also asks you to choose your language on first launch; you can change it later in Settings.
+
+**Quick links:** [English](#netscope-40--network-discovery-diagnostics--monitoring) · [Translations](#translated-guides--guides-traduits)
+
+---
+
+
 **NetScope** is a Windows-first, privacy-friendly network toolkit designed for **your own or authorized private LAN**. It includes a dark desktop interface, a built-in diagnostic console, a custom Windows icon, **22 diagnostic tools**, and an all-new local monitoring dashboard.
 
 ## New in 4.0
@@ -75,3 +87,198 @@ tests/test_monitoring.py    Offline automated tests
 Python syntax, offline SQLite/history tests and a headless graphical interface smoke test have passed on Linux. The Windows `.exe`, Windows-specific commands and monitoring against a real network **have not yet been tested** in this environment. Some OS commands and socket details require additional privileges.
 
 Licensed under the MIT license (see `LICENSE`).
+
+
+---
+
+## Translated guides / Guides traduits
+
+<details>
+<summary><strong>🇫🇷 Français</strong></summary>
+
+### Présentation
+**NetScope** est un logiciel Windows open source pour découvrir, diagnostiquer et surveiller les appareils d'un réseau local privé que vous administrez. Il comprend une interface sombre, une console de diagnostics, 22 outils, des graphiques de trafic, des alertes et un historique local.
+
+### Fonctionnalités
+- Recherche d'appareils, adresses IP/MAC disponibles, résolution DNS et export CSV/JSON.
+- Ping, traceroute, ports TCP, latence, HTTP, TLS et diagnostics système/réseau.
+- Surveillance facultative avec analyses périodiques, alertes de changements et graphiques en temps réel.
+- Historique local SQLite et paramètres personnalisables.
+- Choix de la langue au premier lancement ; modification possible dans **Settings**.
+
+### Installation Windows
+Installez **Python 3.11+**, extrayez l'archive et lancez `build.bat`. L'exécutable sera créé dans `dist\NetScope.exe`. Vous pouvez aussi télécharger l'artefact Windows depuis **GitHub Actions** après la compilation. L'archive source ne contient pas de `.exe` précompilé.
+
+### Confidentialité et limites
+Aucun compte, cloud ni télémétrie. Les réglages et l'historique restent sur votre PC. Analysez uniquement les réseaux dont vous avez l'autorisation. Un appareil non détecté n'est pas nécessairement hors ligne. Le `.exe` et les diagnostics spécifiques à Windows n'ont pas encore été validés sur un véritable réseau Windows.
+
+</details>
+
+<details>
+<summary><strong>🇩🇪 Deutsch</strong></summary>
+
+### Überblick
+**NetScope** ist ein quelloffenes Windows-Tool zur Erkennung, Diagnose und Überwachung von Geräten in einem privaten Netzwerk, für das Sie eine Berechtigung haben. Es bietet eine dunkle Oberfläche, eine Diagnosekonsole, 22 Werkzeuge, Verkehrsdiagramme, Warnungen und einen lokalen Verlauf.
+
+### Funktionen
+- Geräteerkennung mit verfügbaren IP-/MAC-Adressen, DNS-Auflösung sowie CSV-/JSON-Export.
+- Ping, Traceroute, TCP-Portprüfung, Latenz, HTTP, TLS und System-/Netzwerkdiagnosen.
+- Optionale regelmäßige Scans, Änderungswarnungen und Echtzeitdiagramme.
+- Lokaler SQLite-Verlauf und anpassbare Einstellungen.
+- Sprachauswahl beim ersten Start; später unter **Settings** änderbar.
+
+### Windows-Build
+Installieren Sie **Python 3.11+**, entpacken Sie das Archiv und starten Sie `build.bat`. Die Datei liegt danach unter `dist\NetScope.exe`. Alternativ können Sie das Windows-Artefakt aus **GitHub Actions** herunterladen. Das Quellarchiv enthält keine vorkompilierte EXE.
+
+### Datenschutz und Grenzen
+Keine Konten, Cloud-Dienste oder Telemetrie. Einstellungen und Verlauf bleiben lokal. Scannen Sie nur Netzwerke, für die Sie eine Erlaubnis haben. Nicht erkannte Geräte sind nicht zwangsläufig offline. Der Windows-Build und Windows-spezifische Diagnosen wurden noch nicht in einem echten Windows-Netzwerk getestet.
+
+</details>
+
+<details>
+<summary><strong>🇪🇸 Español</strong></summary>
+
+### Descripción
+**NetScope** es una herramienta de código abierto para Windows que permite descubrir, diagnosticar y supervisar dispositivos en redes privadas autorizadas. Incluye una interfaz oscura, consola de diagnóstico, 22 herramientas, gráficos de tráfico, alertas e historial local.
+
+### Funciones
+- Descubrimiento de dispositivos, direcciones IP/MAC disponibles, DNS y exportación CSV/JSON.
+- Ping, traceroute, puertos TCP, latencia, HTTP, TLS y diagnósticos del sistema y la red.
+- Escaneos periódicos opcionales, alertas de cambios y gráficos en tiempo real.
+- Historial SQLite local y ajustes personalizables.
+- Selección de idioma en el primer inicio; también desde **Settings**.
+
+### Compilación en Windows
+Instala **Python 3.11+**, extrae el archivo y ejecuta `build.bat`. Encontrarás el ejecutable en `dist\NetScope.exe`. También puedes obtenerlo desde **GitHub Actions** después de compilarlo. El ZIP del código fuente no incluye un `.exe` compilado.
+
+### Privacidad y limitaciones
+Sin cuentas, nube ni telemetría. Los ajustes y el historial se guardan localmente. Analiza solo redes para las que tengas permiso. Un dispositivo no detectado no siempre está desconectado. El ejecutable y los diagnósticos específicos de Windows aún no se han probado en una red Windows real.
+
+</details>
+
+<details>
+<summary><strong>🇮🇹 Italiano</strong></summary>
+
+### Panoramica
+**NetScope** è uno strumento open source per Windows che consente di rilevare, diagnosticare e monitorare dispositivi su reti private autorizzate. Include un'interfaccia scura, console diagnostica, 22 strumenti, grafici del traffico, avvisi e cronologia locale.
+
+### Funzionalità
+- Rilevamento dei dispositivi, indirizzi IP/MAC disponibili, DNS ed esportazione CSV/JSON.
+- Ping, traceroute, porte TCP, latenza, HTTP, TLS e diagnostica del sistema e della rete.
+- Scansioni periodiche facoltative, avvisi sui cambiamenti e grafici in tempo reale.
+- Cronologia SQLite locale e impostazioni personalizzabili.
+- Scelta della lingua al primo avvio, modificabile in **Settings**.
+
+### Compilazione su Windows
+Installa **Python 3.11+**, estrai l'archivio ed esegui `build.bat`. Troverai il programma in `dist\NetScope.exe`. In alternativa scarica l'artefatto da **GitHub Actions** dopo la compilazione. L'archivio sorgente non contiene un `.exe` già compilato.
+
+### Privacy e limiti
+Nessun account, cloud o telemetria. Impostazioni e cronologia restano sul PC. Esegui scansioni solo sulle reti per cui hai l'autorizzazione. Un dispositivo non rilevato non è necessariamente offline. Il file EXE e le diagnosi specifiche di Windows non sono ancora stati testati su una rete Windows reale.
+
+</details>
+
+<details>
+<summary><strong>🇯🇵 日本語</strong></summary>
+
+### 概要
+**NetScope** は、管理権限のあるプライベートネットワーク上の機器を検出・診断・監視する、Windows 向けのオープンソースツールです。ダークテーマの画面、診断コンソール、22 種類のツール、通信量グラフ、通知、ローカル履歴を備えています。
+
+### 主な機能
+- デバイス検出、取得可能な IP/MAC アドレス、DNS 解決、CSV/JSON 出力。
+- Ping、traceroute、TCP ポート検査、遅延、HTTP、TLS、システム・ネットワーク診断。
+- 任意で有効にする定期スキャン、変化の通知、リアルタイムグラフ。
+- ローカル SQLite 履歴とカスタマイズ可能な設定。
+- 初回起動時の言語選択。後から **Settings** でも変更可能。
+
+### Windows でのビルド
+**Python 3.11 以降**をインストールし、ZIP を展開して `build.bat` を実行してください。`dist\NetScope.exe` が生成されます。ビルド後に **GitHub Actions** の成果物から取得することもできます。ソース ZIP にコンパイル済み EXE は含まれません。
+
+### プライバシーと注意事項
+アカウント、クラウド、利用状況の送信はありません。設定と履歴は PC 内に保存されます。許可されたネットワークでのみ使用してください。検出されない機器が必ずしもオフラインとは限りません。Windows 向け EXE と Windows 固有の診断は、実際の Windows ネットワークで未検証です。
+
+</details>
+
+<details>
+<summary><strong>🇰🇷 한국어</strong></summary>
+
+### 소개
+**NetScope**는 관리 권한이 있는 사설 네트워크의 장치를 검색, 진단, 모니터링하는 Windows용 오픈 소스 도구입니다. 다크 UI, 진단 콘솔, 22가지 도구, 트래픽 그래프, 알림 및 로컬 기록을 제공합니다.
+
+### 주요 기능
+- 장치 검색, 확인 가능한 IP/MAC 주소, DNS 조회, CSV/JSON 내보내기.
+- Ping, traceroute, TCP 포트, 지연 시간, HTTP, TLS 및 시스템/네트워크 진단.
+- 선택적으로 실행하는 정기 스캔, 변경 알림, 실시간 그래프.
+- 로컬 SQLite 기록과 사용자 지정 설정.
+- 첫 실행 시 언어 선택, 이후 **Settings**에서 변경 가능.
+
+### Windows 빌드
+**Python 3.11 이상**을 설치하고 압축을 푼 뒤 `build.bat`를 실행하세요. `dist\NetScope.exe`가 생성됩니다. 빌드 후 **GitHub Actions** 아티팩트에서도 받을 수 있습니다. 소스 ZIP에는 미리 빌드된 EXE가 없습니다.
+
+### 개인정보 보호 및 제한 사항
+계정, 클라우드 서비스, 원격 텔레메트리가 없습니다. 설정과 기록은 PC에 저장됩니다. 허가받은 네트워크에서만 스캔하세요. 검색되지 않은 장치가 반드시 오프라인인 것은 아닙니다. Windows 실행 파일과 Windows 전용 진단은 실제 Windows 네트워크에서 아직 검증되지 않았습니다.
+
+</details>
+
+<details>
+<summary><strong>🇵🇹 Português</strong></summary>
+
+### Visão geral
+**NetScope** é uma ferramenta Windows de código aberto para descobrir, diagnosticar e monitorizar dispositivos em redes privadas autorizadas. Inclui uma interface escura, consola de diagnóstico, 22 ferramentas, gráficos de tráfego, alertas e histórico local.
+
+### Funcionalidades
+- Descoberta de dispositivos, endereços IP/MAC disponíveis, DNS e exportação CSV/JSON.
+- Ping, traceroute, portas TCP, latência, HTTP, TLS e diagnósticos do sistema e da rede.
+- Análises periódicas opcionais, alertas de alterações e gráficos em tempo real.
+- Histórico SQLite local e definições personalizáveis.
+- Seleção de idioma no primeiro arranque e alteração posterior em **Settings**.
+
+### Compilação no Windows
+Instala **Python 3.11+**, extrai o arquivo e executa `build.bat`. O programa fica em `dist\NetScope.exe`. Também podes descarregar o artefacto de **GitHub Actions** após a compilação. O ZIP com o código-fonte não inclui um EXE pré-compilado.
+
+### Privacidade e limitações
+Sem contas, nuvem ou telemetria. As definições e o histórico são guardados localmente. Analisa apenas redes para as quais tens autorização. Um dispositivo não detetado não está necessariamente offline. O EXE e os diagnósticos específicos do Windows ainda não foram testados numa rede Windows real.
+
+</details>
+
+<details>
+<summary><strong>🇷🇺 Русский</strong></summary>
+
+### Обзор
+**NetScope** — инструмент с открытым исходным кодом для Windows, предназначенный для обнаружения, диагностики и мониторинга устройств в частных сетях, к которым у вас есть разрешённый доступ. Включает тёмный интерфейс, консоль диагностики, 22 инструмента, графики трафика, уведомления и локальную историю.
+
+### Возможности
+- Поиск устройств, доступные IP/MAC-адреса, DNS и экспорт CSV/JSON.
+- Ping, traceroute, проверка TCP-портов, задержки, HTTP, TLS и диагностика системы/сети.
+- Необязательные периодические проверки, уведомления об изменениях и графики в реальном времени.
+- Локальная история SQLite и настраиваемые параметры.
+- Выбор языка при первом запуске; позже его можно изменить в **Settings**.
+
+### Сборка для Windows
+Установите **Python 3.11+**, распакуйте архив и запустите `build.bat`. Файл появится по пути `dist\NetScope.exe`. После сборки его также можно скачать из **GitHub Actions**. Архив исходников не содержит готового EXE.
+
+### Конфиденциальность и ограничения
+Учётная запись, облако и телеметрия не требуются. Настройки и история сохраняются локально. Сканируйте только сети, на проверку которых у вас есть разрешение. Отсутствие ответа не обязательно означает отключение устройства. EXE и функции диагностики Windows ещё не проверялись в реальной сети Windows.
+
+</details>
+
+<details>
+<summary><strong>🇨🇳 简体中文</strong></summary>
+
+### 简介
+**NetScope** 是一款面向 Windows 的开源工具，可用于发现、诊断和监控您有权管理的私有网络中的设备。提供深色界面、诊断控制台、22 种工具、流量图表、提醒和本地历史记录。
+
+### 主要功能
+- 设备发现、可获取的 IP/MAC 地址、DNS 查询，以及 CSV/JSON 导出。
+- Ping、路由跟踪、TCP 端口检测、延迟、HTTP、TLS 和系统/网络诊断。
+- 可选的定期扫描、设备变化提醒和实时图表。
+- 本地 SQLite 历史记录与可自定义设置。
+- 首次启动时选择语言，也可在 **Settings** 中修改。
+
+### 在 Windows 上构建
+安装 **Python 3.11 或更高版本**，解压项目并运行 `build.bat`，生成的文件位于 `dist\NetScope.exe`。构建后也可从 **GitHub Actions** 下载。源代码 ZIP 不包含预编译的 EXE。
+
+### 隐私与限制
+无需账户、云服务或遥测。设置与历史记录保存在本机。请仅扫描获得授权的网络。未检测到设备不一定表示设备已离线。Windows EXE 和 Windows 专用诊断尚未在真实 Windows 网络中验证。
+
+</details>
+
