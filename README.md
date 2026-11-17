@@ -1,16 +1,97 @@
-# NetScope 4.0 — Network Discovery, Diagnostics & Monitoring
+# 🌐 NetScope 4.0 — Découverte, diagnostic et surveillance réseau
 
-<!-- README language navigation -->
-## 🌍 Documentation languages / Langues de documentation
+## 🌍 Documentation — Choisissez votre langue
 
-**Available languages:** 🇬🇧 English · 🇫🇷 Français · 🇩🇪 Deutsch · 🇪🇸 Español · 🇮🇹 Italiano · 🇯🇵 日本語 · 🇰🇷 한국어 · 🇵🇹 Português · 🇷🇺 Русский · 🇨🇳 简体中文
+**🇫🇷 Français (par défaut)** · 🇬🇧 English · 🇩🇪 Deutsch · 🇪🇸 Español · 🇮🇹 Italiano · 🇯🇵 日本語 · 🇰🇷 한국어 · 🇵🇹 Português · 🇷🇺 Русский · 🇨🇳 简体中文
 
-The full technical documentation is in English below. Translated quick-start guides are available at the bottom of this page. NetScope also asks you to choose your language on first launch; you can change it later in Settings.
-
-**Quick links:** [English](#netscope-40--network-discovery-diagnostics--monitoring) · [Translations](#translated-guides--guides-traduits)
+La documentation complète en **français est affichée ci-dessous**. La version anglaise et les huit autres traductions sont accessibles dans des sections déroulantes. Dans l'application, la langue est proposée au premier lancement et peut être modifiée dans **Settings**.
 
 ---
 
+## Présentation
+
+**NetScope** est un logiciel Windows open source conçu pour **les réseaux locaux privés que vous possédez ou êtes autorisé à administrer**. Il propose une interface sombre, une console de diagnostic intégrée, une icône Windows personnalisée, **22 outils de diagnostic**, un tableau de bord de surveillance et un historique local.
+
+## Nouveautés de la version 4.0
+
+- **Surveillance :** analyses périodiques facultatives du réseau local (toutes les 30 à 3 600 secondes). Une première analyse sert de référence ; les suivantes signalent les adresses nouvellement détectées ou qui ne répondent plus. Vous pouvez démarrer, arrêter et consulter le compte à rebours. Le sous-réseau choisi doit rester identique pendant la surveillance.
+- **Alertes :** notifications intégrées facultatives, signal sonore et messages dans la console. Une alerte ne prouve pas qu'un appareil vient de se connecter ou de se déconnecter : pare-feu, veille Wi-Fi, absence de réponse ICMP ou variations du cache ARP peuvent provoquer des différences.
+- **Tableau de bord :** débits de téléchargement et d'envoi mis à jour chaque seconde, graphique du trafic total du PC et graphique de latence moyenne par analyse achevée (pas une mesure continue de chaque appareil).
+- **Connexions actives :** affichage périodique des connexions établies **par votre PC**, regroupées par IP distante. Ce n'est ni un outil de capture de paquets ni un moyen de consulter les connexions des autres appareils. Certaines informations exigent des autorisations système.
+- **Historique :** base SQLite locale enregistrant les analyses et les changements, avec date, sous-réseau, nombre d'appareils et durée. Possibilité de rafraîchir, exporter les événements en CSV ou supprimer l'historique.
+- **Paramètres :** intervalle de surveillance enregistré, notifications activables et autres options déjà présentes.
+- **Internationalisation :** interface de surveillance et historique traduits dans les dix langues prises en charge, avec choix de la langue au premier démarrage.
+
+## Fonctionnalités de diagnostic
+
+**22 outils :** ping (4 essais), DNS inversé, traceroute, analyse de ports TCP (32 ports maximum), temps de connexion TCP, en-têtes HTTP, inspection TLS (protocole, chiffrement, empreinte), informations IP, calculateur de sous-réseau /24 à titre d'exemple, série de 10 pings, informations système, cartes réseau, configuration IP, cache ARP/voisins, table de routage, connexions TCP/UDP, mesure de débit, configuration DNS, informations Wi-Fi, test de passerelle, test de boucle locale et bilan de santé réseau.
+
+NetScope propose aussi la découverte d'adresses IPv4 privées (254 hôtes maximum par analyse), une estimation de la latence, l'enrichissement ARP, la résolution facultative des noms d'hôtes, la recherche et le tri, l'export CSV/JSON, une console de diagnostic et l'enregistrement des logs. Certaines commandes dépendent de Windows.
+
+## Compiler `NetScope.exe` sur Windows
+
+1. Installez **Python 3.11 ou une version plus récente** depuis python.org.
+2. Décompressez l'archive du projet.
+3. Double-cliquez sur **`build.bat`** : il installe les dépendances et lance PyInstaller.
+4. Retrouvez **`dist\NetScope.exe`**. L'icône `assets/netscope.ico` est intégrée à l'exécutable.
+
+Autre possibilité : publiez le projet sur GitHub, ouvrez **Actions → Build NetScope for Windows**, puis téléchargez l'artefact `NetScope-Windows-x64`. **Le ZIP du code source ne contient pas de fichier `.exe` précompilé.**
+
+Pour lancer le logiciel depuis les sources :
+
+```powershell
+py -m pip install psutil
+py netscope.py
+```
+
+Pour lancer les tests automatisés hors ligne :
+
+```powershell
+py -m unittest discover -s tests -v
+```
+
+## Utiliser la surveillance
+
+1. Dans l'onglet **Devices**, sélectionnez une interface privée appartenant à un réseau que vous administrez.
+2. Ouvrez **Monitor** et choisissez l'intervalle (60 secondes par défaut, 30 secondes minimum).
+3. Cliquez sur **Start monitoring**, puis confirmez explicitement que vous êtes autorisé à effectuer des scans répétés.
+4. Attendez la fin de l'analyse de référence. Les analyses suivantes enregistrent les changements d'IP détectées. Le graphique de trafic peut fonctionner même lorsque la surveillance automatique est arrêtée.
+5. Consultez **History** pour les événements et les bilans. Vous pouvez désactiver les notifications dans **Settings**, ou arrêter la surveillance à tout moment.
+
+Les scans sont limités aux sous-réseaux IPv4 privés RFC1918 de 256 adresses au maximum (/24 ou plus petits). NetScope **n'intercepte pas le trafic réseau**, ne garantit pas de découvrir tous les appareils et ne peut pas certifier qu'un appareil absent est déconnecté.
+
+## Confidentialité et stockage
+
+Aucun compte, service cloud ou système de télémétrie. Les réglages se trouvent dans `%APPDATA%\NetScope\settings.json` et l'historique dans `%APPDATA%\NetScope\history.sqlite3`. Les exports de résultats et les logs sont enregistrés uniquement à la demande. Ils peuvent contenir des adresses IP ou MAC sensibles : vérifiez-les avant de les partager.
+
+N'effectuez des analyses que sur les réseaux pour lesquels vous disposez d'une autorisation. La surveillance ne démarre jamais automatiquement avec NetScope : elle exige une action et une confirmation à chaque session.
+
+## Fichiers du projet
+
+```text
+netscope.py                 Interface, découverte et diagnostics
+monitoring.py               Surveillance, historique SQLite, graphiques et alertes
+translations.py             Textes de l'interface dans 10 langues
+diagnostics_extra.py        Outils de diagnostic complémentaires
+assets/netscope.ico         Icône de l'exécutable Windows
+assets/netscope.png         Icône de la fenêtre
+build.bat                   Compilation de l'exécutable Windows
+.github/workflows/         Compilation Windows via GitHub Actions
+tests/test_monitoring.py    Tests automatisés hors ligne
+```
+
+## Tests et limites
+
+La syntaxe Python, les tests hors ligne de la base SQLite et de l'historique ainsi qu'un test graphique sans écran ont été validés sous Linux. **L'exécutable Windows, les commandes propres à Windows et la surveillance sur un véritable réseau Windows n'ont pas encore été testés** dans cet environnement. Certaines informations et commandes nécessitent des droits supplémentaires.
+
+Licence **MIT** : consultez le fichier `LICENSE`.
+
+---
+
+<details>
+<summary><strong>🇬🇧 English — Click to expand</strong></summary>
+
+# NetScope 4.0 — Network Discovery, Diagnostics & Monitoring
 
 **NetScope** is a Windows-first, privacy-friendly network toolkit designed for **your own or authorized private LAN**. It includes a dark desktop interface, a built-in diagnostic console, a custom Windows icon, **22 diagnostic tools**, and an all-new local monitoring dashboard.
 
@@ -87,30 +168,6 @@ tests/test_monitoring.py    Offline automated tests
 Python syntax, offline SQLite/history tests and a headless graphical interface smoke test have passed on Linux. The Windows `.exe`, Windows-specific commands and monitoring against a real network **have not yet been tested** in this environment. Some OS commands and socket details require additional privileges.
 
 Licensed under the MIT license (see `LICENSE`).
-
-
----
-
-## Translated guides / Guides traduits
-
-<details>
-<summary><strong>🇫🇷 Français</strong></summary>
-
-### Présentation
-**NetScope** est un logiciel Windows open source pour découvrir, diagnostiquer et surveiller les appareils d'un réseau local privé que vous administrez. Il comprend une interface sombre, une console de diagnostics, 22 outils, des graphiques de trafic, des alertes et un historique local.
-
-### Fonctionnalités
-- Recherche d'appareils, adresses IP/MAC disponibles, résolution DNS et export CSV/JSON.
-- Ping, traceroute, ports TCP, latence, HTTP, TLS et diagnostics système/réseau.
-- Surveillance facultative avec analyses périodiques, alertes de changements et graphiques en temps réel.
-- Historique local SQLite et paramètres personnalisables.
-- Choix de la langue au premier lancement ; modification possible dans **Settings**.
-
-### Installation Windows
-Installez **Python 3.11+**, extrayez l'archive et lancez `build.bat`. L'exécutable sera créé dans `dist\NetScope.exe`. Vous pouvez aussi télécharger l'artefact Windows depuis **GitHub Actions** après la compilation. L'archive source ne contient pas de `.exe` précompilé.
-
-### Confidentialité et limites
-Aucun compte, cloud ni télémétrie. Les réglages et l'historique restent sur votre PC. Analysez uniquement les réseaux dont vous avez l'autorisation. Un appareil non détecté n'est pas nécessairement hors ligne. Le `.exe` et les diagnostics spécifiques à Windows n'ont pas encore été validés sur un véritable réseau Windows.
 
 </details>
 
@@ -281,4 +338,3 @@ Sem contas, nuvem ou telemetria. As definições e o histórico são guardados l
 无需账户、云服务或遥测。设置与历史记录保存在本机。请仅扫描获得授权的网络。未检测到设备不一定表示设备已离线。Windows EXE 和 Windows 专用诊断尚未在真实 Windows 网络中验证。
 
 </details>
-
