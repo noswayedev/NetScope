@@ -89,7 +89,7 @@ Licence **MIT** : consultez le fichier `LICENSE`.
 ---
 
 <details>
-<summary><strong>🇬🇧 English — Click to expand</strong></summary>
+<summary><strong>🇬🇧 English</strong></summary>
 
 # NetScope 4.0 — Network Discovery, Diagnostics & Monitoring
 
